@@ -1,4 +1,3 @@
-//package reverseInteger
 package main
 
 import (
