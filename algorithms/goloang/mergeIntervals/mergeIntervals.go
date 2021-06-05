@@ -13,10 +13,10 @@ func merge(intervals [][]int) [][]int {
 	merge := [][]int{}
 	sort.Sort(byStart(intervals))
 
-	merge = append(merge, intervals[0])
+	merge = append(merge, append([]int(nil), intervals[0]...))
 	for i := 1; i < n; i++ {
 		if merge[len(merge)-1][1] < intervals[i][0] {
-			merge = append(merge, intervals[i])
+			merge = append(merge, append([]int(nil), intervals[i]...))
 		} else {
 			merge[len(merge)-1][1] = max(merge[len(merge)-1][1], intervals[i][1])
 		}
